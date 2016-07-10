@@ -5,15 +5,17 @@
 
 //user chooses a film
 	// That will prompt a character or planet 
-	// From there, a random image will popup
+	// From there, a random image will pop up
 	
-// From that image, the 
+// From that image, a colour palette will generate.
 
 var swApp = {}
 
 var swApiFilms = 'http://swapi.co/api/films/';
 var swApiChars = 'http://swapi.co/api/people/';
 var swApiPlanets = 'http://swapi.co/api/planets/';
+
+var swPics = 'https://sheetsu.com/apis/v1.0/0c44167aca42'
 
 swApp.init = function(){
 	var films = $.ajax({
@@ -34,9 +36,15 @@ swApp.init = function(){
 		dataType: 'json'
 	})
 
+	var pics = $.ajax({
+		url: swPics,
+		method: 'GET',
+		dataType: 'jsonp'
+	})
+
 	$.when(films,characters,planets)
-	.then(function(movie,people,places){
-		console.log(movie,people,places);
+	.then(function(movies,photos){
+		console.log(movies,photos);
 	});
 
 	swApp.getData(movie.title);
@@ -50,6 +58,8 @@ swApp.displayData = function(){
 
 };
 
+//document ready!
 $(function(){
+	// will call initializing function!
 	swApp.init();
 });
