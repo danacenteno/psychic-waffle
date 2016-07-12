@@ -30,13 +30,16 @@ swApp.getData = function () {
 	var pics = $.ajax({
 		url: swApp.images,
 		method: 'GET',
-		dataType: 'jsonp'
+		dataType: 'json'
 	});
 
-	$.when(films).then(function (filmData, picData) {
-		// console.log(filmData);
+	$.when(films, pics).then(function (filmData, picData) {
+		console.log(filmData, picData);
 		var movies = filmData.results;
-		console.log(movies);
+		// console.log(movies);
+
+		var images = picData.img1;
+		// console.log(images);
 	});
 
 	// swApp.getData(movies.title);
