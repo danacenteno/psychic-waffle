@@ -18,6 +18,8 @@ swApp.init = function(){
 	swApp.getData();
 };
 
+// grab data from sw api (film titles, opening crawl)
+// also grab image URLs from sheetsu api you made
 swApp.getData = function(){
 	var films = $.ajax({
 		url: swApp.films,
@@ -37,12 +39,25 @@ swApp.getData = function(){
 		var movies = filmData.results;
 		// console.log(movies);
 
-		var images = picData.img1;
+		var ep1img = picData[0]
+		var ep2img = picData[1]
+		var ep3img = picData[2]
+		var ep4img = picData[3]
+		var ep5img = picData[4]
+		var ep6img = picData[5]
+		var ep7img = picData[6]
+
 		// console.log(images);
 	});
 
 	// swApp.getData(movies.title);
 };
+
+// when a movie is selected, movie title and opening crawl will show up 
+
+// an image from that movie will also be randomly generated and displayed for the user.
+
+// there will also be an option to grab a color palette using colorthief JS.
 
 swApp.displayData = function(){
 
