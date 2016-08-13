@@ -16,6 +16,14 @@ swApp.images = 'https://sheetsu.com/apis/v1.0/0c44167aca42';
 
 swApp.init = function(){
 	swApp.getData();
+
+	// $('select').on('change', function(){
+	// 	$('#films').empty();
+	// 	var episode = $('select').val();
+
+	// 	swApp.getData(episode);
+	// });
+
 };
 
 // grab data from sw api (film titles, opening crawl)
@@ -35,21 +43,29 @@ swApp.getData = function(){
 
 	$.when(films,pics)
 	.then(function(filmData,picData){
-		console.log(filmData,picData);
-		var movies = filmData.results;
-		// console.log(movies);
+		// console.log(filmData,picData);
+		var movies = filmData[0].results;
+		console.log(movies);
 
-		var ep1img = picData[0]
-		var ep2img = picData[1]
-		var ep3img = picData[2]
-		var ep4img = picData[3]
-		var ep5img = picData[4]
-		var ep6img = picData[5]
-		var ep7img = picData[6]
+		var images = picData[0];
+		console.log(images);
+ 
+		// need to figure out how to dynamically generate titles and images without making a billion variables!
 
-		// console.log(images);
+		// var title = movies[1].title;	
+		// // console.log(title);
+
+		// var description = movies[1].opening_crawl;
+		// console.log(description);
+
+		// var hope = images[0];
+		// // console.log(hope);
+		// var empire = images[1];
+		// // console.log(empire);
+		// var jedi = images[2];
+		// // console.log(jedi);
+		// var force = images[3];
 	});
-
 	// swApp.getData(movies.title);
 };
 
