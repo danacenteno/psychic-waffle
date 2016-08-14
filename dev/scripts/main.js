@@ -17,6 +17,13 @@ swApp.images = 'https://sheetsu.com/apis/v1.0/0c44167aca42';
 swApp.init = function(){
 	swApp.getData();
 
+	// $('select').on('change', function(){
+	// 	$('#films').empty();
+	// 	var episode = $('select').val();
+
+	// 	swApp.getData(episode);
+	// });
+
 };
 
 // grab data from sw api (film titles, opening crawl)
@@ -62,39 +69,58 @@ swApp.displayData = function(filminfo,pix){
 	filminfo.forEach(function(films){
 		var filmsTitle = films.title;
 		$('.title').text(filmsTitle);
-		console.log(filmsTitle);
+		// console.log(filmsTitle);
 
 		var filmDescription = films.opening_crawl;
 		$('.description').text(filmDescription);
-		console.log(filmDescription);
+		// console.log(filmDescription);
 	});
 
 	// A New Hope
-	
-	var hope = pix[0];
-	console.log(hope);
 
-	var hopeRandom = (Math.floor(Math.random() * 20));
-	console.log(hope[hopeRandom]);
+	pix.forEach(function(filmPix){
+		var filmNumber = (Math.floor(Math.random() * 20));
+		console.log(filmNumber);
+		
+	});
 
-	var hopeImg = $('<img>').attr('src', hope[hopeRandom]);
-	console.log(hopeImg);
+		// var hope = pix[0];
+		// console.log(hope);
 
-	var hopeDiv = $('<div>')
-					.addClass('results').append(hopeImg);
+		// var hopeRandom = (Math.floor(Math.random() * 20));
+		// console.log(hope[hopeRandom]);
 
-	$('#images').append(hopeDiv);
+		// var hopeImg = $('<img>').attr('src', hope[hopeRandom]);
+		// console.log(hopeImg);
 
-	// The Empire Strikes Back
+		// var hopeDiv = $('<div>')
+		// 				.addClass('results').append(hopeImg);
+
+		// $('#images').append(hopeDiv);
+
+	// // The Empire Strikes Back
 
 	// var empire = pix[1];
 	// console.log(empire);
 
+	// var empireRandom = (Math.floor(Math.random() * 20));
+	// console.log(empire[empireRandom]);
+
+	// // Return of The Jedi
+
 	// var jedi = pix[2];
 	// console.log(jedi);
 
+	// var jediRandom = (Math.floor(Math.random() * 20));
+	// console.log(jedi[jediRandom]);
+
+	// // The Force Awakens
+
 	// var force = pix[3];
 	// console.log(force);
+
+	// var forceRandom = (Math.floor(Math.random() * 20));
+	// console.log(force[forceRandom]);
 
 
 	// var title = filminfo[0].title;	
