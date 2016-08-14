@@ -17,13 +17,6 @@ swApp.images = 'https://sheetsu.com/apis/v1.0/0c44167aca42';
 swApp.init = function(){
 	swApp.getData();
 
-	// $('select').on('change', function(){
-	// 	$('#films').empty();
-	// 	var episode = $('select').val();
-
-	// 	swApp.getData(episode);
-	// });
-
 };
 
 // grab data from sw api (film titles, opening crawl)
@@ -69,26 +62,30 @@ swApp.displayData = function(filminfo,pix){
 	filminfo.forEach(function(films){
 		var filmsTitle = films.title;
 		$('.title').text(filmsTitle);
-		// console.log(filmsTitle);
+		console.log(filmsTitle);
 
 		var filmDescription = films.opening_crawl;
 		$('.description').text(filmDescription);
-		// console.log(filmDescription);
+		console.log(filmDescription);
 	});
 
+	// A New Hope
+	
 	var hope = pix[0];
-	// console.log(hope);
+	console.log(hope);
 
-	var hopeRandom = (Math.floor(Math.random() * hope.length));
+	var hopeRandom = (Math.floor(Math.random() * 20));
 	console.log(hope[hopeRandom]);
 
-	// var hopeImg = $('<img>').attr('src', hopeRandom);
-	// console.log(hopeImg);
+	var hopeImg = $('<img>').attr('src', hope[hopeRandom]);
+	console.log(hopeImg);
 
-	// var hopeDiv = $('<div>')
-	// 				.addClass('results').append(hopeImg);
+	var hopeDiv = $('<div>')
+					.addClass('results').append(hopeImg);
 
-	// $('#images').append(hopeDiv);
+	$('#images').append(hopeDiv);
+
+	// The Empire Strikes Back
 
 	// var empire = pix[1];
 	// console.log(empire);
