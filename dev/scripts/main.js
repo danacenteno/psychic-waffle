@@ -79,9 +79,13 @@ swApp.displayData = function(filminfo,pix){
 	// A New Hope
 
 	pix.forEach(function(filmPix){
+		var randomMovie = (Math.floor(Math.random() * 3));
+		console.log(randomMovie);
+
 		var filmNumber = (Math.floor(Math.random() * 20));
 		console.log(filmNumber);
-		
+
+
 	});
 
 		// var hope = pix[0];
