@@ -14,7 +14,7 @@
 var swApp = {};
 
 swApp.films = 'http://swapi.co/api/films/';
-swApp.images = 'https://sheetsu.com/apis/v1.0/0c44167aca42';
+// swApp.images = 'https://sheetsu.com/apis/v1.0/0c44167aca42';
 
 swApp.init = function () {
 	swApp.getData();
@@ -37,7 +37,7 @@ swApp.getData = function () {
 	});
 
 	var pics = $.ajax({
-		url: swApp.images,
+		url: './scripts/images.json',
 		method: 'GET',
 		dataType: 'json'
 	});
