@@ -43,7 +43,7 @@ swApp.getData = function () {
 	});
 
 	$.when(films, pics).then(function (filmData, picData) {
-		// console.log(filmData,picData);
+		console.log(filmData, picData);
 		var movies = filmData[0].results;
 		// console.log(movies);
 
@@ -66,7 +66,7 @@ swApp.getData = function () {
 swApp.displayData = function (filminfo, pix) {
 	// console.log(filminfo,pix);
 
-	filminfo.forEach(function (films) {
+	filminfo.forEach(function (films, photos) {
 		var filmsTitle = films.title;
 		$('.title').text(filmsTitle);
 		// console.log(filmsTitle);
@@ -76,12 +76,21 @@ swApp.displayData = function (filminfo, pix) {
 		// console.log(filmDescription);
 	});
 
-	// A New Hope
+	// // A New Hope
+	// var hope = pix[0];
+	// console.log(hope);
 
-	pix.forEach(function (filmPix) {
-		var filmNumber = Math.floor(Math.random() * 20);
-		console.log(filmNumber);
-	});
+	// // The Empire Strikes Back
+	// var empire = pix[1];
+	// console.log(empire);
+
+	// // Return of The Jedi
+	// var jedi = pix[2];
+	// console.log(jedi);
+
+	// // The Force Awakens
+	// var force = pix[3];
+	// console.log(force);
 
 	// var hope = pix[0];
 	// console.log(hope);
