@@ -43,13 +43,11 @@ swApp.getData = function(){
 
 	$.when(films,pics)
 	.then(function(filmData,picData){
-		console.log(filmData,picData);
+		// console.log(filmData,picData);
 		var movies = filmData[0].results;
 		// console.log(movies);
 
 		var images = picData[0];
- 
-		// need to figure out how to dynamically generate titles and images without making a billion variables!
 
 		swApp.displayData(movies,images);
 		// console.log(movies,images);
@@ -63,18 +61,107 @@ swApp.getData = function(){
 
 // there will also be an option to grab a color palette using colorthief JS.
 
+// need to figure out how to dynamically generate titles and images without making a billion variables!
 swApp.displayData = function(filminfo,pix){
-	// console.log(filminfo,pix);
+	console.log(filminfo,pix);
+}
 
-	filminfo.forEach(function(films,photos){
-		var filmsTitle = films.title;
-		$('.title').text(filmsTitle);
-		// console.log(filmsTitle);
 
-		var filmDescription = films.opening_crawl;
-		$('.description').text(filmDescription);
-		// console.log(filmDescription);
-	});
+
+	// var hopeTitle = filminfo[0].title;
+	// // console.log(hopeTitle);
+
+	// var hopeDescription = filminfo[0].opening_crawl;
+	// // console.log(hopeDescription);
+
+	// var empireTitle = filminfo[5].title;
+	// // console.log(empireTitle);
+
+	// var empireDescription = filminfo[5].opening_crawl;
+	// // console.log(empireDescription);
+
+	// var jediTitle = filminfo[4].title;
+	// // console.log(jediTitle);
+
+	// var jediDescription = filminfo[4].opening_crawl;
+	// // console.log(jediDescription);
+
+	// var forceTitle = filminfo[6].title;
+	// // console.log(forceTitle);
+
+	// var forceDescription = filminfo[6].opening_crawl;
+	// // console.log(forceDescription);
+
+
+
+
+	// // Corresponding images
+	// var hopePix = pix[0];
+	// // console.log(hopePix);
+
+	// // assigns random number from 1-20 to movie image arrays
+	// var picRandom = (Math.floor(Math.random() * 20));
+
+
+	// // A New Hope
+	// var hopeImg = $('<img>').attr('src', hopePix[picRandom]);
+	// // console.log(hopeImg);
+
+	// var hopeDiv = $('<div>')
+	// 				.addClass('results').append(hopeImg);
+
+	// $('#images').append(hopeDiv);
+
+
+
+
+	// var empirePix = pix[1];
+	// // console.log(empirePix);
+
+	// var jediPix = pix[2];
+	// // console.log(jediPix);
+
+	// var forcePix = pix[3];
+	// console.log(forcePix);
+
+	// filminfo.forEach(function(films,photos){
+	// 	var filmsTitle = films.title;
+	// 	$('.title').text(filmsTitle);
+
+	// 	// console.log(filmsTitle);
+
+	// 	var filmDescription = films.opening_crawl;
+	// 	$('.description').text(filmDescription);
+	// 	// console.log(filmDescription);
+
+		// // A New Hope
+		// var hope = pix[0];
+		// // console.log(hope);
+
+		// var hopeRandom = (Math.floor(Math.random() * 20));
+		// // console.log(hope[hopeRandom]);
+
+		// var hopeImg = $('<img>').attr('src', hope[hopeRandom]);
+		// // console.log(hopeImg);
+
+		// var hopeDiv = $('<div>')
+		// 				.addClass('results').append(hopeImg);
+
+		// $('#images').append(hopeDiv);
+
+		// // The Empire Strikes Back
+		// var empire = pix[1];
+		// console.log(empire);
+
+		// // Return of The Jedi
+		// var jedi = pix[2];
+		// console.log(jedi);
+
+		// // The Force Awakens
+		// var force = pix[3];
+		// console.log(force);
+
+	// });
 
 	// // A New Hope
 	// var hope = pix[0];
@@ -146,7 +233,7 @@ swApp.displayData = function(filminfo,pix){
 	// var jedi = images[2];
 	// // console.log(jedi);
 	// var force = images[3];
-};
+// };
 
 //document ready!
 $(function(){
